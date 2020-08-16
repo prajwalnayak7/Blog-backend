@@ -28,7 +28,7 @@ func Run() {
 	if err != nil {
 		log.Fatalf("[SERVER] Error loading environment variables, %v", err)
 	} else {
-		fmt.Println("[SERVER] Loading environment variables")
+		fmt.Println("[SERVER] Loaded environment variables")
 	}
 
 	// Connect to the Database
