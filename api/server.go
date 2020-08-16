@@ -8,6 +8,7 @@ import (
 	"github.com/joho/godotenv"
 
 	"github.com/prajwalnayak7/Blog/api/controller"
+	"github.com/prajwalnayak7/Blog/api/seed"
 )
 
 var server = controller.Server{}
@@ -31,11 +32,11 @@ func Run() {
 		fmt.Println("[SERVER] Loaded environment variables")
 	}
 
-	// Connect to the Database
+	// Connect to the Database server and create the database
 	server.Initialize(os.Getenv("DB_DRIVER"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PORT"), os.Getenv("DB_HOST"), os.Getenv("DB_NAME"))
 
 	// Make initial entries to the database
-	// seed.Load(server.DB)
+	seed.Load(server.DB)
 
 	// Expose a port for the server to run
 	server.Run(":8080")

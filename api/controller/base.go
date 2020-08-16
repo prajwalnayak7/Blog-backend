@@ -9,6 +9,7 @@ import (
 	"github.com/jinzhu/gorm"
 
 	_ "github.com/jinzhu/gorm/dialects/postgres" //postgres database driver
+	models "github.com/prajwalnayak7/Blog/api/model"
 )
 
 type Server struct {
@@ -32,7 +33,7 @@ func (server *Server) Initialize(Dbdriver, DbUser, DbPassword, DbPort, DbHost, D
 	}
 
 	// Database migration
-	// server.DB.Debug().AutoMigrate(&models.User{}, &models.Post{})
+	server.DB.Debug().AutoMigrate(&models.User{}, &models.Post{})
 
 	server.Router = mux.NewRouter()
 
