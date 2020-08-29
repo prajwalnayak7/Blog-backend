@@ -2,7 +2,6 @@ version: '3'
 
 services:
   app:
-    image: 598339596224.dkr.ecr.ap-south-1.amazonaws.com/hello-repository1 
     container_name: BACKEND
     build: .
     ports: 
