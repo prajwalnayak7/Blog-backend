@@ -7,5 +7,3 @@ docker-compose up
 # Push to dockerhub
 docker-compose build
 docker-compose push
-
-Build using jenkins
