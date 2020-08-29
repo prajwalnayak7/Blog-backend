@@ -8,3 +8,4 @@ docker-compose up
 docker-compose build
 docker-compose push
 
+Build using jenkins
