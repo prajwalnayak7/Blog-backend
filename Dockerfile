@@ -10,6 +10,9 @@ RUN apk update && apk add --no-cache git
 # Set the current working directory inside the container 
 WORKDIR /app
 
+# Find the go modules
+ENV GO111MODULE=on
+
 # Copy go mod and sum files 
 COPY go.mod go.sum ./
 
